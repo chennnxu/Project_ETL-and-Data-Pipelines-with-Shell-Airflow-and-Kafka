@@ -41,7 +41,14 @@ dag = DAG(
 
 # define a task to unzip data
 unzip_data = Bash_Operator(
-    task_id = 'unzip data',
-    bash_command = ''
+    task_id = 'unzip_data',
+    bash_command = 'tar -xzf /home/project/airflow/dags/finalassignment/tolldata.tgz',
+    dag=dag,
+)
+
+# define a task to extract data from csv file
+extract_data_from_csv = Bash_Operator(
+    task_id = 'extract_data_from_csv',
+    bash_commandd = 'cut -dsou'
 )
 
